@@ -18,7 +18,6 @@ def main():
 
 def check_validity(credit_card_number):
     reversed_digits = [int(digit) for digit in str(credit_card_number)][::-1]
-    reversed_digits = [int(digit) for digit in str(credit_card_number)][::-1]
     
 
 def check_validity(credit_card_number):
