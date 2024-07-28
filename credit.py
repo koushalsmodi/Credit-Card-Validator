@@ -18,6 +18,7 @@ def main():
 
 def check_validity(credit_card_number):
     reversed_digits = [int(digit) for digit in str(credit_card_number)][::-1]
+    total = sum(get_luhn_digit(digit, index) for index, digit in enumerate(reverse_digits))
     
 
 def check_validity(credit_card_number):
