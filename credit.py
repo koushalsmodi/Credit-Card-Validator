@@ -15,6 +15,13 @@ def main():
         # If invalid, print "INVALID"
         print('INVALID')
 
+
+def check_validity(credit_card_number):
+    reversed_digits = [int(digit) for digit in str(credit_card_number)][::-1]
+    reversed_digits = [int(digit) for digit in str(credit_card_number)][::-1]
+    reversed_digits = [int(digit) for digit in str(credit_card_number)][::-1]
+    
+
 def check_validity(credit_card_number):
     # Convert the credit card number to a list of digits in reverse order
     reversed_digits = [int(digit) for digit in str(credit_card_number)][::-1]
