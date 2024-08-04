@@ -45,6 +45,12 @@ def check_validity(credit_card_number):
     return total % 10 = 0
 
 def get_luhn_digit(digit, index):
+    if index % 2 != 0:
+        doubled_digit = 2 * digit
+        return doubled_digit if doubled_digit < 10 else doubled_digit - 9
+    return digit
+
+def get_luhn_digit(digit, index):
     # Apply Luhn's algorithm to each digit based on its position in the credit card number
     if index % 2 != 0:
         doubled_digit = 2 * digit
