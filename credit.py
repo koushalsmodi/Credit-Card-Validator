@@ -15,6 +15,16 @@ def main():
     else:
         # If invalid, print "INVALID"
         print('INVALID')
+    
+def check_validity(credit_card_number):
+    # Convert the credit card number to a list of digits in reverse order
+    reversed_digits = [int(digit) for digit in str(credit_card_number)][::-1]
+
+    # Calculate the checksum using Luhn's algorithm
+    total = sum(get_luhn_digit(digit, index) for index, digit in enumerate(reversed_digits))
+
+    # Check if the total checksum is divisible by 10
+    return total % 10 == 0
 
 def main():
     while True:
@@ -33,17 +43,6 @@ def check_validity(credit_card_number):
 
     total = sum(get_luhn_digit(digit, index) for index, digit in enumerate(reversed_digits))
     return total % 10 = 0
-
-    
-def check_validity(credit_card_number):
-    # Convert the credit card number to a list of digits in reverse order
-    reversed_digits = [int(digit) for digit in str(credit_card_number)][::-1]
-
-    # Calculate the checksum using Luhn's algorithm
-    total = sum(get_luhn_digit(digit, index) for index, digit in enumerate(reversed_digits))
-
-    # Check if the total checksum is divisible by 10
-    return total % 10 == 0
 
 def get_luhn_digit(digit, index):
     # Apply Luhn's algorithm to each digit based on its position in the credit card number
