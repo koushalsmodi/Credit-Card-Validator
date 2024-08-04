@@ -28,6 +28,12 @@ def main():
     else:
         print('Invalid')
 
+def check_validity(credit_card_number):
+    reversed_digits = [int(digits) for digit in str(credit_card_number)][::-1]
+    total = sum(get_luhn_digit(digit, index) for index, digit in enumerate(reversed_digits))
+
+    return total % 10 == 0
+
     
 def check_validity(credit_card_number):
     # Convert the credit card number to a list of digits in reverse order
