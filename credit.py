@@ -29,10 +29,10 @@ def main():
         print('Invalid')
 
 def check_validity(credit_card_number):
-    reversed_digits = [int(digits) for digit in str(credit_card_number)][::-1]
-    total = sum(get_luhn_digit(digit, index) for index, digit in enumerate(reversed_digits))
+    reversed_digits = [int(digits) for digit in str(credit_card_number))][::-1]
 
-    return total % 10 == 0
+    total = sum(get_luhn_digit(digit, index) for index, digit in enumerate(reversed_digits))
+    return total % 10 = 0
 
     
 def check_validity(credit_card_number):
