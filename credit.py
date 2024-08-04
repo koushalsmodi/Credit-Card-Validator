@@ -1,5 +1,18 @@
 from cs50 import get_int
 
+
+def main():
+    while True:
+        credit_card = get_int("Number: ")
+        if credit_card >= 0:
+            break
+
+    if check_validity(credit_card):
+        print_card_brand(credit_card)
+
+    else:
+        print('Invalid')
+
 def main():
     while True:
         # Get input for credit card number
