@@ -1,6 +1,5 @@
 from cs50 import get_int
 
-
 def main():
     while True:
         # Get input for credit card number
