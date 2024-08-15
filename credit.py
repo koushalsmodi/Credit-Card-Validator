@@ -26,25 +26,6 @@ def check_validity(credit_card_number):
     # Check if the total checksum is divisible by 10
     return total % 10 == 0
 
-def main():
-    while True:
-        credit_card = get_int("Number: ")
-        if credit_card >= 0:
-            break
-
-    if check_validity(credit_card):
-        print_card_brand(credit_card)
-
-    else:
-        print('Invalid')
-
-def check_validity(credit_card_number):
-    reversed_digits = [int(digits) for digit in str(credit_card_number))][::-1]
-
-    total = sum(get_luhn_digit(digit, index) for index, digit in enumerate(reversed_digits))
-    return total % 10 = 0
-
-
 def get_luhn_digit(digit, index):
     # Apply Luhn's algorithm to each digit based on its position in the credit card number
     if index % 2 != 0:
